@@ -12,7 +12,7 @@ import './style.css';
 
 const tictacArray = new Array(9).fill("");
 const App = () => {
-	let [isCross, setIsCross] = useState(true);
+	let [isCross, setIsCross] = useState(false);
 	let [winMessage, setWinMessage] = useState("");
 
 	const playAgain = () => {
@@ -22,6 +22,9 @@ const App = () => {
 	}
 
 	const findWinner = () => {
+		// 0 1 2
+		// 3 4 5
+		// 6 7 8
 		// Rows Conditions
 		if (tictacArray[0] && tictacArray[0] == tictacArray[1] && tictacArray[0] == tictacArray[2]) {
 			setWinMessage(tictacArray[0] + " Wins!!!")
@@ -83,6 +86,18 @@ const App = () => {
 
 				<Row>
 					<Col md={6} className="offset-md-3">
+
+
+							{/* Deciding first turn  */}							
+							{/* <div>
+								<h5>
+									Whose Turn First :
+								<Button className="button mb-3 btn-dark" onClick={isCross="false"}> Circle </Button>
+								<Button className="button mb-3 btn-dark" onClick={isCross=true}> Cross </Button>
+								</h5>
+							</div> */}
+						
+
 
 						{
 							// to display winner message
